@@ -1,0 +1,145 @@
+@import '~assets/scss/common/_vars';
+
+@media (max-width: 767px) {
+
+
+    .navbar{
+        min-height: 1px;
+        width: 100%;
+        background-color: $navbar-common-inverse-bg;
+        box-shadow: 0 1px 10px $navbar-common-bg;
+
+        .navbar-header{
+            background-color: $navbar-common-bg;
+
+            .navbar-toggle{
+
+                .icon-bar{}
+            }
+            .navbar-brand{
+                padding:4px 15px;
+                padding-top: 8px;
+                padding-bottom: 1px;
+                display: inline-block;
+
+                img{
+                    width: 30px;
+                }
+            }
+        }
+        .navbar-collapse{
+
+            &.current-user-profile{
+                margin-bottom: 0;
+                color: $navbar-common-inverse-color;
+
+                li{
+
+                    a{
+                        .user-icon{
+                            .img-wrapper{
+                                width: $xs-current-user-size;
+                                height: $xs-current-user-size;
+
+                                img{
+                                    width: $xs-current-user-size;
+                                    height: $xs-current-user-size;
+                                }
+                            }
+                        }
+                        h3{
+                            color: $navbar-common-color;
+                            font-size: 18px;
+                            padding: 0 5px;
+                            margin: 0;
+                        }
+                        background-color: transparent;
+                        &:hover,
+                        &:focus{
+                            background-color: transparent;
+                        }
+                    }
+                    &.open{
+                        a{
+                            background-color: $navbar-common-inverse-bg;//$navbar-common-item-hover-color;
+                        }
+                    }
+                    .dropdown-menu{
+                        position: relative;
+                        left: 0;
+                        width: 100%;
+                        display: block;
+                        background-color: $navbar-common-inverse-bg;
+
+                        li{
+                            padding: 15px 20px;
+                            font-size:18px;
+                            color: $navbar-common-inverse-color;
+
+                            &:hover,
+                            &.selectedLink{
+                                background-color: $navbar-common-item-hover-color;
+                                color: $navbar-common-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &.navbar-menu{
+                .navbar-nav{
+
+                    li{
+                        padding: 0;
+                        margin-bottom: 0;
+                        border-bottom: 1px solid $navbar-common-bg;
+
+                        &:hover,
+                        &.selectedLink{
+                            background-color: $navbar-common-item-hover-color;
+                            transition: 0.5s ease in;
+                            span {
+
+                                &.selected {
+                                    display: block;
+                                }
+                            }
+                            h3{
+                                color: $navbar-common-color;
+                            }
+                        }
+                        h3 {
+                            color: $navbar-common-bg;
+                            padding-top: 15px;
+                            padding-bottom: 15px;
+                            margin: 0;
+                            font-size: 1.8rem;
+                        }
+                        span {
+                            font-size: 20px;
+
+                            &.selected {
+                                width: 5px;
+                                top: 0;
+                                height: 100%;
+                                left: 0;
+                                position: absolute;
+                                background-color: #183C56;
+                                display: none;
+                            }
+                            &:nth-of-type(2){
+                                display: inline-block;
+                                padding: 0 20px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

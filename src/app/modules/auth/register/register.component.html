@@ -1,0 +1,55 @@
+<form #formData="ngForm" class="auth-form" (ngSubmit)="formData.valid && onSubmit(formData.value)" novalidate>
+    <div class="bc-input-group">
+        <span class="input-addon">
+            <i class="glyphicon glyphicon-user"></i>
+        </span>
+        <input type="text" placeholder="Username" name="username" minlength="5" #username="ngModel" ngModel pattern="^[a-zA-Z0–9_.+-]+$" required />
+        <div class="invalid" *ngIf="username.errors && (username.dirty || username.touched || formData.submitted)">
+            <p *ngIf="username.errors.required">
+                Username is required
+            </p>
+            <p *ngIf="username.errors.minlength">
+                Username length must be no less than 5
+            </p>
+            <p *ngIf="username.errors.pattern">
+                Must be characters and/or _+.- symbols and/or numbers
+            </p>
+            <p *ngIf="username.errors.nameNotValid">
+                error
+            </p>
+        </div>
+    </div>
+    <div class="bc-input-group">
+        <span class="input-addon">
+            <i class="fa fa-key"></i>
+        </span>
+        <input type="password" placeholder="Password" minlength="6" name="password" #password="ngModel" ngModel required />
+        <div class="invalid" *ngIf="password.errors && (password.dirty || password.touched || formData.submitted)">
+            <p *ngIf="password.errors.required">
+                Password is required
+            </p>
+            <p *ngIf="password.errors.minlength">
+                Password length must be no less than 6
+            </p>
+            <p *ngIf="password.errors.nameNotValid">
+                error
+            </p>
+        </div>
+    </div>
+    <div class="bc-input-group">
+        <span class="input-addon">
+            <i class="fa fa-key"></i>
+        </span>
+        <input type="password" placeholder="Confirm Password" #confirmPassword="ngModel" name="passwordConfirm" ngModel required />
+        <div class="invalid" *ngIf="confirmPassword.errors && (confirmPassword.dirty || confirmPassword.touched || formData.submitted)">
+            <p *ngIf="confirmPassword.errors.required">
+                Confirm Password is required
+            </p>
+            <p *ngIf="confirmPassword.errors.passwordNotConfirmed">
+                Password mismatch
+            </p>
+        </div>
+    </div>
+    <button type="submit">Register</button>
+</form>
+<p-growl [(value)]="authService.msgs"></p-growl>

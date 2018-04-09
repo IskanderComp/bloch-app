@@ -1,0 +1,41 @@
+.dashboard-main{
+    float: right;
+    height: 100%;
+
+    input:not([type="range"]),
+    select,
+    textarea{
+        border: 1px solid #aaaaaa;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 768px) {
+    @media (max-height: 399px) {
+        .dashboard-main{
+            width: calc(100% - 80px);
+        }
+    }
+    @media (min-height: 400px) and (max-height: 500px) {
+        .dashboard-main{
+            width: calc(100% - 70px);
+        }
+    }
+    @media (min-height: 501px) {
+        .dashboard-main{
+            width: calc(100% - 90px);
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .dashboard-main{
+        display: block;
+        padding-top: 57px;
+        height: auto;
+        min-height: 100%;
+        width: 100%;
+        float: none;
+
+    }
+}

@@ -1,0 +1,181 @@
+/* --- fonts ---- */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import "fonts";
+
+@import "mixins";
+
+
+$img-base-path: '~assets/img/';
+
+
+/**
+      Override bootstrap variables
+*/
+/*-----Fonts----*/
+$font-family-cooper-hewitt-medium: "cooper_hewittmedium", sans-serif;
+$font-family-cooper-hewitt-semibold: "cooper_hewittsemibold", sans-serif;
+////
+$font-family-base:      sans-serif;
+
+/*-----Font size----*/
+
+//$font-size-base:          14px !default;
+//$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+//$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+//
+//$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+//$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+//$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+//$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+//$font-size-h5:            $font-size-base !default;
+//$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+/*-----Scrollbar----*/
+$scrollbar-track-color: #cdcdcd;
+$scrollbar-track-hover-color: $scrollbar-track-color;
+$scrollbar-track-active-color: $scrollbar-track-color;
+$scrollbar-thumb-color: #666;
+$scrollbar-thumb-hover-color: $scrollbar-thumb-color;
+$scrollbar-thumb-active-color: $scrollbar-thumb-color;
+////END///
+
+
+/*-----Colors----*/
+$brand-primary:         #2F658E;
+$brand-success:         #00bd9e;
+
+$brand-common:          #071017;
+
+////
+
+
+
+
+/**
+      Common Variables
+*/
+//// Authentication page ////
+$login-bg: #111f35;
+$login-box-shadow: 30px 30px 0 10px rgba(33, 50, 73, 0.35);
+$tab-active-border: 2px solid #FFF;
+
+////  END  ////
+
+
+$msg-box-bg: #FFFFFF;
+$msg-box-border-color: $brand-common;
+$msg-box-border: 1px solid $msg-box-border-color;
+$msg-box-width: 80%;
+
+
+$svg-icon-bg: $brand-common;
+$svg-icon-color: #FFF;
+
+
+$text-inverse-color: #FFF;
+
+
+$navbar-common-bg: $brand-common;
+$navbar-common-color: $text-inverse-color;
+
+$navbar-common-inverse-bg: #dce2e6;
+$navbar-common-inverse-color: $navbar-common-bg;
+
+$navbar-common-item-hover-color: #0D1E2B;
+
+$navbar-common-toggle-icon-bar-bg: #FFF;
+
+$divider-color: rgba(99, 111, 127, 0.29);
+$divider-color-light: #eeeeee;
+
+
+$border-divider: 1px solid $divider-color;
+$border-divider-light: 1px solid $divider-color-light;
+
+
+/**
+      Special Variables
+*/
+$special-icon-mail-color: #00B494;
+$special-icon-todo-color: #8EA5AC;
+$special-icon-user-color: #6C82B6;
+
+
+
+
+//$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+//$brand-info:            #5bc0de !default;
+//$brand-warning:         #f0ad4e !default;
+//$brand-danger:          #d9534f !default;
+
+//$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+//$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+////** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+//$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+//$font-family-base:        $font-family-sans-serif !default;
+//
+//$font-size-base:          14px !default;
+//$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+//$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+//
+//$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+//$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+//$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+//$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+//$font-size-h5:            $font-size-base !default;
+//$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+
+
+
+
+
+
+
+
+
+//// Home ////
+$color_gallery_approx: #f0f0f0;
+$color_chicago_approx: #565656;
+$color_mercury_approx: #e6e6e6;
+$color_my_sin_approx: #ffb72f;
+$color_gray_nurse_approx: #eaeaea;
+$white: #fff;
+$color_quill_gray_approx:  lightgray;
+$color_azure_approx: #3c5a99;
+$color_dodger_blue_approx: #1da1f2;
+$color_valencia_approx: #d54538;
+$color_deep_cerulean_approx: #0077b5;
+$color_web_orange_approx: #fba400;
+$black: #000;
+$color_grenadier_approx: #dd2c00;
+$color_delta_approx: #a3a3a3;
+
+
+
+$primaryColor-LightGray : #e8e8e8 ;
+$primaryColor-BabyBlue : #2B628C;
+$primaryColor-BlackBlue : #071017 ;
+$primaryColor-PastelGreen : #00B494 ;
+$primaryColor-GreyBlue : #6C82B6 ;
+$primaryColor-DirtTurquoise : #8EA5AC ;
+////  END  ////
+
+
+$xs-screen-min: 320px;
+
+
+$input_border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+$current-user-size: 50px;
+$xs-current-user-size: 50px;
+
+$profile-img-size-big: 120px;
+$profile-img-size-small: 80px;
+
+
+
+

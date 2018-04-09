@@ -1,0 +1,82 @@
+<vg-player (onPlayerReady)="isVideo && onPlayerReady($event)">
+    <!--<vg-overlay-play></vg-overlay-play>-->
+    <!--<vg-buffering *ngIf="isVideo"></vg-buffering>-->
+    <vg-scrub-bar [ngStyle]="{'display': isVideo ? 'block' : 'none'}" [vgSlider]="true">
+        <vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+    <vg-controls style="z-index: 200" *ngIf="isVideo"
+        [vgAutohide]="true"
+        [vgAutohideTime]="5">
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button ></vg-playback-button>
+
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-track-selector></vg-track-selector>
+        <vg-quality
+            vgFor="mediaRef"
+            (select)="selectQuality($event)"
+            [defaultQuality]="defaultQuality"
+            [qualitySources]="qualitySources"
+        ></vg-quality>
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+
+        <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+    <a-scene vr-mode-ui="enabled: false" *ngIf="is360">
+        <a-assets>
+            <img *ngIf="!isVideo" id="my-image" [src]="itemSrc" crossorigin/>
+            <video *ngIf="isVideo" #mediaRef
+                    id="master"
+                    [vgMedia]="mediaRef"
+                    autoplay
+                    [loop]="true"
+                    [src]="itemSrc"
+                    (play)="play()"
+                    (stalled)="staled($event)"
+                    (error)="error($event)"
+                    (seeked)="seeked($event)"
+                    (seeking)="seeking($event)"
+                    (pause)="pause()"
+                    (playing)="playing()"
+                    (loadstart)="loadeddata($event)"
+                    (progress)="progress($event)"
+                    (volumechange)="onvolumechange($event)"
+                    type="video/mp4"
+                    crossorigin
+                    controls>
+            </video>
+        </a-assets>
+        <a-sky *ngIf="!isVideo" src="#my-image"></a-sky>
+        <a-videosphere *ngIf="isVideo" src="#master"></a-videosphere>
+    </a-scene>
+    <img *ngIf="!isVideo && !is360" id="my-image1" [src]="itemSrc" style="margin: auto;" crossorigin/>
+    <video *ngIf="isVideo && !is360" #mediaRef
+           id="master"
+           [vgMedia]="mediaRef"
+           autoplay
+           [loop]="true"
+           [src]="itemSrc"
+           (play)="play()"
+           (pause)="pause()"
+           (playing)="playing()"
+           (progress)="progress($event)"
+           (volumechange)="onvolumechange($event)"
+           type="video/mp4"
+           crossorigin>
+    </video>
+</vg-player>
+
+<!--<ul>-->
+    <!--<li *ngFor="let i of storageService.playlist; let idx = index"-->
+        <!--(click)="onClickPlaylistItem(i, idx)"-->
+        <!--[class.active]="i === item">-->
+    <!--{{i.name }}-->
+    <!--</li>-->
+<!--</ul>-->

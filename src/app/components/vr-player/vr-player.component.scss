@@ -1,0 +1,42 @@
+vr-player {
+
+  vg-player {
+    width: calc(100% - 250px);
+    float: left;
+
+    vg-controls {
+      z-index: 200;
+
+      vg-scrub-bar {
+        pointer-events: none;
+      }
+    }
+  }
+  ul {
+    border-left: 2px solid green;
+    background-color:#222;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 250px;
+    height: 100%;
+    float: right;
+
+    li {
+        padding: 10px;
+        cursor: pointer;
+        color:#fff;
+
+      &.active {
+        background-color: #dddddd;
+        color: #333;
+      }
+
+      &:hover {
+        background-color: #cce6ee;
+        color: #333;
+      }
+    }
+  }
+}

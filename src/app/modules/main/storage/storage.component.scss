@@ -1,0 +1,193 @@
+@import '~assets/scss/common/vars';
+
+.bc-storages{
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #f1f1f1;
+    height: 100%;
+
+    .top-navbar{
+
+        .svg-block{
+            background-color: $svg-icon-bg;
+            width: 80px;
+            height: 70px;
+            margin-right: 10px;
+
+            .svg-user{
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+
+            &.pull-right{
+                margin-right: 0;
+                right: 0;
+            }
+        }
+        .bc-search{}
+    }
+
+    .border-dashed{
+        border: 1px dashed;
+        border-left-color: #AAA;
+        border-right-color: #AAA;
+        background-color: #fff;
+
+        .svg-block{
+            width: 100%;
+            height: 65px;
+            padding-left: 0;
+            padding-right: 0;
+
+            h6{
+                color: #333;
+            }
+        }
+    }
+
+    .storages-content{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: calc(100% - 90px - 47px);
+
+
+
+        .storages-sidebar{
+            background: #FFF;
+            box-shadow: 0 1px 4px #AAA;
+
+            >.row{
+                border-bottom: 1px solid #AAA;
+
+                .nav{
+
+                    li{
+                        padding-left: 30px;
+
+                        .bullet{
+                            position: absolute;
+                            font-size: 8px;
+                            left: 10px;
+                            top: 50%;
+                            margin-top: -6px;
+                        }
+                    }
+                }
+
+
+                >.col-md-6:first-child{
+                    border-right: 1.5px solid #AAA;
+                }
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+
+            .svg-block{
+                width: 100%;
+                height: 65px;
+                padding-left: 0;
+                padding-right: 0;
+
+                h6{
+                    color: #333;
+                }
+            }
+
+
+        }
+        .storages-box{
+            height: 100%;
+            overflow-y: auto;
+        }
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+
+    >li {
+        font-size: 18px;
+        color: #2f658e;
+        cursor: pointer;
+
+        &.active {
+            color: #333;
+            cursor: default;
+        }
+
+        & + li:before{
+            content: "\003e";
+        }
+    }
+}
+
+.storage-folder {
+    cursor: pointer;
+    display: flex;
+    background: #fff;
+    box-shadow: 0 1px 3px #aaa;
+
+
+}
+.folder-icon {
+    font-size: 25px;
+    padding: 3px 15px;
+    display: inline-block;
+
+    .folder {
+        display: block;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        color: #444;
+    }
+
+    .del-folder {
+        display: none;
+        background-color: #ddd;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        color: #444;
+    }
+
+    &:hover {
+        .folder {
+            display: none;
+        }
+
+        .del-folder {
+            display: block;
+        }
+    }
+
+    & + .folder-title {
+        display: inline-block;
+        line-height: 30px;
+        padding: 5px 3px;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        width: calc(100% - 53px);
+        overflow: hidden;
+    }
+}
+
+.btn-upload {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.uploading-container {
+    background-color: #fff;
+    width: 350px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

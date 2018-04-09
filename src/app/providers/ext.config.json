@@ -1,0 +1,62 @@
+{
+  "extensions": {
+    "jpg": {
+      "mime": "image/jpeg",
+      "icon": "/assets/img/extensions/jpg-icon.png"
+    },
+    "jpeg": {
+      "mime": "image/jpeg",
+      "icon": "/assets/img/extensions/png-icon.png"
+    },
+    "gif": {
+      "mime": "image/gif",
+      "icon": "/assets/img/extensions/gif-icon.png"
+    },
+    "png": {
+      "mime": "image/png",
+      "icon": "/assets/img/extensions/png-icon.png"
+    },
+    "bmp": {
+      "mime": "image/bmp",
+      "icon": "/assets/img/extensions/bmp-icon.png"
+    },
+    "svg": {
+      "mime": "image/svg+xml",
+      "icon": "/assets/img/extensions/bmp-icon.png"
+    },
+    "avi": {
+      "mime": "video/x-msvideo",
+      "icon": "/assets/img/extensions/avi-icon.png"
+    },
+    "mmm": {
+      "mime": "video/mmm",
+      "icon": "/assets/img/extensions/mmm-icon.png"
+    },
+    "mp4": {
+      "mime": "video/mp4",
+      "icon": "/assets/img/extensions/iso-icon.png"
+    },
+    "mpeg": {
+      "mime": "audio/mpeg",
+      "icon": "/assets/img/extensions/mpeg-icon.png"
+    },
+    "mp3": {
+      "mime": "audio/mp3",
+      "icon": "/assets/img/extensions/mp3-icon.png"
+    },
+    "html": {
+      "mime": "text/html",
+      "icon": "/assets/img/extensions/html-icon.png"
+    },
+    "txt": {
+      "mime": "text/plain",
+      "icon": "/assets/img/extensions/html-icon.png"
+    },
+    "zip": {
+      "mime": "application/zip"
+    },
+    "rar": {
+      "mime": "application/x-rar-compressed"
+    }
+  }
+}

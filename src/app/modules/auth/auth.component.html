@@ -1,0 +1,41 @@
+<div class="bc-auth container-fluid h-100">
+    <div class="row h-100">
+        <div class="col-md-8 col-md-push-2 col-xs-12 h-100">
+            <div class="row h-100">
+                <div class="auth-container h-100 clearfix">
+                    <div class="col-sm-5 divider">
+                        <h4>Discover all your business communication needs in one place!</h4>
+                        <div class="rocket-block">
+                            <img src="/assets/img/rocketship.svg">
+                        </div>
+                        <div class="logo-type">
+                            <img src="/assets/img/blochLogoType.svg">
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <div class="col-xs-12 bc-nav-tabs">
+                                <a routerLinkActive="tabActive"
+                                   [routerLink]="['/auth/login']">Sign In
+                                </a>
+                                <a routerLinkActive="tabActive"
+                                   [routerLink]="['/auth/signup']">Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-10 col-xs-12">
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                        <div class="row terms">
+                            <h5>Terms &amp; Condition</h5>
+                            <h5>Privacy Policy</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

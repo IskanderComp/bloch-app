@@ -1,0 +1,287 @@
+@import '~assets/scss/common/_vars';
+
+
+.bc-auth {
+
+    .auth-container {
+        position: relative;
+        background-color: $login-bg;
+
+        .col-sm-5 {
+
+            h4 {
+                text-align: center;
+                line-height: 22px;
+                color: $text-inverse-color;
+            }
+            .rocket-block {
+                width: 90%;
+            }
+            .logo-type {
+                width: 60%;
+                margin-top: 60px;
+            }
+        }
+        .col-sm-7 {
+
+            .bc-nav-tabs {
+
+                a {
+                    font-size: 20px;
+                    display: inline-block;
+                    font-weight: 600;
+                    text-align: center;
+                    padding: 5px 20px;
+                    color: $text-inverse-color;
+                    text-decoration: none;
+
+                    &.tabActive {
+                        border-bottom:$tab-active-border;
+                    }
+                }
+            }
+
+            .terms {
+                padding: 40px 15px 5px;
+                color: $text-inverse-color;
+
+                h5 {
+                    font-size: 14px;
+                    display: inline-block;
+
+                    &:nth-child(1) {
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.auth-form{
+    margin-top: 40px;
+
+    .invalid {
+        color: red;
+    }
+
+    .bc-input-group{
+        position: relative;
+
+        .input-addon{
+            font-size: 20px;
+            left: 3px;
+            color: $text-inverse-color;
+            position: absolute;
+        }
+
+        input{
+            width: 100%;
+            border: none;
+            background: none;
+            border-bottom: $input_border;
+            font-size: 18px;
+            padding-bottom: 5px;
+            padding-left: 30px;
+            color: $text-inverse-color;
+            margin-bottom: 20px;
+
+            &:focus {
+                outline: none;
+            }
+            &::-webkit-input-placeholder {
+                font-family: inherit;
+                padding-left: 40px;
+                padding-bottom: 10px;
+                font-weight: 500;
+                line-height: 43px;
+                color: $text-inverse-color;
+                opacity: 0.8;
+
+            }
+            &::-moz-placeholder {
+                font-size: 20px;
+                padding-left: 40px;
+                padding-bottom: 10px;
+                font-weight: 500;
+                line-height: 43px;
+                color: $text-inverse-color;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        border: none;
+        opacity: 0.82;
+        font-size: 22px;
+        line-height: 30px;
+        background-color: #2E3D52;
+        padding: 10px 0;
+        font-weight: 500;
+        color: $text-inverse-color;
+
+        &:hover {
+            background-color: #FFF;
+            color: #2E3D52;;
+        }
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .bc-auth {
+        .auth-container {
+            height: auto;
+            min-height: calc(100% - 15px - 60px);
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 50px;
+            padding: 50px 60px;
+            box-shadow: $login-box-shadow;
+
+            .col-sm-5 {
+
+                h4 {
+                    font-size: 20px;
+                    text-align: center;
+                    line-height: 22px;
+                    color: $text-inverse-color;
+                }
+                .rocket-block {
+                    width: 90%;
+                }
+                .logo-type {
+                    width: 60%;
+                    margin-top: 60px;
+                }
+            }
+            .col-sm-7 {
+                padding-left: 25px;
+
+                .terms {
+
+                    h5 {
+                        font-size: 14px;
+                        display: inline-block;
+
+                        &:nth-child(1) {
+                            padding-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .auth-form {
+        margin-top: 90px;
+
+        input {
+            font-size: 20px;
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .bc-auth {
+        .auth-container {
+            height: auto;
+            min-height: calc(100%);
+            display: flex;
+            padding: 40px 50px;
+
+            .col-sm-5 {
+
+                h4 {
+                    font-size: 20px;
+                }
+                .rocket-block {
+                    width: 90%;
+                }
+                .logo-type {
+                    width: 60%;
+                    margin-top: 50px;
+                }
+            }
+            .col-sm-7 {
+                padding-left: 25px;
+
+                .bc-nav-tabs {
+
+                    a {
+                        padding: 5px 0;
+                        margin-right: 20px;
+                    }
+                }
+
+                .terms {}
+            }
+        }
+    }
+
+    .auth-form {
+        margin-top: 90px;
+
+        input {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .bc-auth .auth-container{
+        height: auto;
+        min-height: calc(100%);
+
+        .col-sm-5{
+
+            h4{
+                font-size: 16px;
+            }
+            .rocket-block{
+                display: none;
+            }
+            .logo-type{
+                width: 60%;
+                margin: 20px auto;
+            }
+        }
+        .col-sm-7{
+
+            .bc-nav-tabs{
+
+                a{
+                    font-size: 20px;
+                    display: inline-block;
+                    font-weight: 600;
+                    padding: 5px 0;
+                    width: 50%;
+                    float: left;
+                }
+            }
+            .terms {
+                text-align: center;
+
+                h5 {
+                    font-size: 14px;
+                    display: inline-block;
+
+                    &:nth-child(1) {
+                        padding-right: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .auth-form{
+        margin-top: 40px;
+
+        .bc-input-group input{
+            font-size: 18px;
+        }
+    }
+}

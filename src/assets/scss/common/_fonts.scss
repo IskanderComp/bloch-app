@@ -1,0 +1,28 @@
+
+/*******************************
+* Custom font and Icons
+********************************/
+// icons
+@import '~assets/font/fontIcons/css/blochFontIcons.css';
+
+//Fonts Poppins & Cooper Hewitts
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+// Cooper Hewitts
+@font-face {
+    font-family: 'cooper_hewittmedium';
+    src: url('~assets/font/primary/cooperhewitt-medium-webfont.woff2') format('woff2'),
+    url('~assets/font/primary/cooperhewitt-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cooper_hewittsemibold';
+    src: url('~assets/font/primary/cooperhewitt-semibold-webfont.woff2') format('woff2'),
+    url('~assets/font/primary/cooperhewitt-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+

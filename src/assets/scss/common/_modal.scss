@@ -1,0 +1,84 @@
+@import "~assets/scss/common/vars";
+
+.fade.show{
+  opacity: 1;
+}
+
+.modal-backdrop {
+
+  &.show{
+    opacity: 0.5;
+  }
+
+}
+
+.modal {
+
+  &.fade{
+
+    .modal-dialog{
+      @include translate(0, 0);
+    }
+  }
+  .modal-dialog{
+
+    .modal-content{
+
+      .modal-header{
+
+      }
+
+      .modal-body{
+
+        .form-group{
+
+          input{
+            border: 1px solid #aaa;
+          }
+          .invalid {
+            color: #F00;
+            font-size: 12px;
+
+            p {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+
+      .modal-footer{
+
+      }
+
+    }
+  }
+
+}
+
+
+//#ModalBody {
+//  width: 90%;
+//  margin: 0 auto;
+//  #button {
+//    margin-right: 20px;
+//    background-color: $color_my_sin_approx;
+//    border: 2px $color_my_sin_approx solid;
+//    color: $white;
+//    padding: 7px 29px;
+//    font-size: 15px;
+//    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+//    border-radius: 29px;
+//    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+//    transition: all 150ms ease-in-out;
+//    &:hover {
+//      background-color: $color_web_orange_approx;
+//      color: $white;
+//      border: 2px $white solid;
+//    }
+//  }
+//}
+
+
+
+
+

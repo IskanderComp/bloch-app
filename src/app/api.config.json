@@ -1,0 +1,15 @@
+{
+  "development": {
+    "apiUrl": "http://91.121.145.197:8766",
+    "storageUrl": "http://91.121.145.197:8767",
+    "jmapApiUrl": "http://91.121.145.197/jmap",
+    "calendarApiUrl": "http://91.121.145.197:8768",
+    "siteUrl": "http://localhost:3000"
+  },
+  "production": {
+    "apiUrl": "http://151.80.32.90:8769",
+    "storageUrl": "http://151.80.32.90:8767",
+    "jmapApiUrl": "http://151.80.32.90/jmap",
+    "calendarApiUrl": "http://151.80.32.90:8768"
+  }
+}

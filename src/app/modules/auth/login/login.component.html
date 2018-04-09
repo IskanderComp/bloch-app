@@ -1,0 +1,28 @@
+<!--<p class="error" *ngIf="error" [@fallIn]="state" >{{ error }}</p>-->
+
+<form #formData="ngForm" class="auth-form" (ngSubmit)="formData.valid && onSubmit(formData.value)">
+    <div class="bc-input-group">
+        <span class="input-addon">
+            <i class="glyphicon glyphicon-user"></i>
+        </span>
+        <input type="text" placeholder="Username" name="username" #username="ngModel" ngModel required>
+        <div class="invalid" *ngIf="username.errors && (username.dirty || username.touched || formData.submitted)">
+            <p *ngIf="username.errors.required">
+                Username is required
+            </p>
+        </div>
+    </div>
+    <div class="bc-input-group">
+        <span class="input-addon">
+            <i class="fa fa-key"></i>
+        </span>
+        <input type="password" placeholder="Password" name="password" #password="ngModel" ngModel required>
+        <div class="invalid" *ngIf="password.errors && (password.dirty || password.touched || formData.submitted)">
+            <p *ngIf="password.errors.required">
+                Password is required
+            </p>
+        </div>
+    </div>
+    <button type="submit">Sign In</button>
+</form>
+<p-growl [(value)]="authService.msgs"></p-growl>

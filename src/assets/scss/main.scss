@@ -1,0 +1,66 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "~font-awesome/fonts";
+
+@import "common/vars";
+@import "../icomoon/scss/icomoon";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../node_modules/primeng/resources/primeng.min.css";
+@import "../../../node_modules/primeng/resources/themes/omega/theme.css";
+@import "../../../node_modules/videogular2/fonts/videogular.css";
+
+@import "common/home";
+@import "common/common";
+@import "common/modal";
+@import "common/mixins";
+
+
+*:focus {
+	outline: none;
+}
+
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+//*::-webkit-scrollbar {
+//	display: none;
+//}
+
+
+.hide{
+	display: none !important;
+}
+.show{
+	display: block !important;
+}
+html,
+body{
+    height: 100%;
+}
+//ALWAYS END
+
+//@import "common/media.scss";
+
+
+
+
+
+
+

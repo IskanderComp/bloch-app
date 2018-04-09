@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <div class="navbar-header text-center">
+        <button (click)="toggleProfile()" type="button" class="profile-toggle navbar-toggle collapsed pull-right">
+            <span class="user-img" style="background-image: url('../../../../assets/img/avatars/img1.jpg');"></span>
+        </button>
+        <button (click)="toggleNavbar()" type="button" class="navbar-toggle collapsed pull-left" >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" [routerLink]="['/']">
+            <img alt="Bloch" src="../../../../assets/svg/logo/logo-icon.svg">
+        </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-menu" [ngClass]="{'in': hasInNavbar}">
+        <ul class="nav navbar-nav">
+            <li
+                bc-swap-icon
+                routerLinkActive="selectedLink"
+                [routerLink]="['/storage']">
+                <span class="selected"></span>
+                <span class="hidden-xs">
+                    <img data-alt-img="../../../../assets/svg/icons/navbar/storage2.svg"
+                       src="../../../../assets/svg/icons/navbar/storage.svg">
+                </span>
+                <h3>Storage</h3>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse navbar-sign-out" [ngClass]="{'in': hasInProfile}">
+        <ul class="nav">
+            <li [routerLink]="['/auth/login']">
+                <i class="fa fa-sign-out"></i>
+                <br>
+                <span>Sign Out</span>
+            </li>
+        </ul>
+    </div>
+</nav>

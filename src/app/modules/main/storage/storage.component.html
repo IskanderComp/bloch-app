@@ -1,0 +1,139 @@
+<div class="bc-storages col-xs-12" ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+    <div class="row p-t-30">
+        <div class="col-md-2">
+            <div class="col-xs-12">
+                <div class="row border-dashed">
+                    <div class="svg-block" (click)="reset()">
+                        <span class="svg svg-upload"></span>
+                        <input type="file" #uploadFile class="btn-upload" value="" name="file"
+                               ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+                        <h6>Upload</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row" style="border-bottom: 1px solid #aaa;">
+                <ul class="breadcrumb">
+                    <li *ngFor="let item of storageService.breadcrumbs; let i = index"
+                        [routerLink]="[i !== storageService.breadcrumbs.length - 1 ? item.childPath === '/' ? '/storage/' + storageService.rootDir : '/storage/folders/' + item.id : '']"
+                        [ngClass]="{'active': i == storageService.breadcrumbs.length - 1}">
+                        <span>{{item.childPath === '/' ? storageService.rootDir === 'my-storage' ? 'MyStorage': storageService.rootDir : item.childPath}}</span>
+                    </li>
+                </ul>
+                <h5>
+                    <span class="badge pull-right">{{storageService.files.length + storageService.folders.length}} items in the {{storageService.selectedDir.childPath == '/' ? 'Storage' : storageService.selectedDir.childPath}}</span>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="row storages-content">
+        <div class="col-md-2">
+            <div class="col-xs-12 storages-sidebar">
+                <div class="row">
+                    <div class="svg-block"
+                        [routerLink]="['my-storage']">
+                        <span class="svg svg-file"></span>
+                        <h6>My Storage</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="svg-block"
+                        [routerLink]="['shared-with-me']">
+                        <span class="svg svg-sharing"></span>
+                        <h6>Sharing</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="svg-block" (click)="addFolder()">
+                        <span class="svg svg-folder"></span>
+                        <h6>Folders</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 storages-box">
+            <div class="row">
+                <router-outlet></router-outlet>
+
+                <div *ngIf="files && files.length"
+                        class="uploading-container">
+                    <div class="col-xs-12">
+                        <div class="row" style="
+                                        border-radius: 3px 3px 0 0;
+                                        background-color: #323232;
+                                        border: 1px transparent solid;
+                                        color: #fff;
+                                        padding: 10px 15px;
+                                        font-size: 16px;">
+                            <span>{{files.length}} file(s) added for upload</span>
+                            <span class="pull-right" style="cursor: pointer; margin-left: 10px;" (click)="closeUpload()"><i class="fa fa-times"></i></span>
+                            <span class="pull-right" style="cursor: pointer" (click)="collapsedUpload = !collapsedUpload">
+                                <i *ngIf="collapsedUpload" class="fa fa-chevron-down"></i>
+                                <i *ngIf="!collapsedUpload" class="fa fa-chevron-up"></i>
+                            </span>
+
+                        </div>
+                        <div *ngIf="collapsedUpload" class="row p-t-b-5" style="
+                        border-left: 1px solid #aaaaaa;
+                        max-height: 180px;
+                        height: auto;
+                        overflow-y: auto;
+                        border-right: 1px solid #aaaaaa;">
+
+                            <div *ngFor="let f of files; let i = index;" class="upload-file p-t-b-10 p-l-r-5" style="border-bottom: 1px solid #eeeeee;">
+                                <span>{{ f.name }}</span>
+                                <div class="progress">
+                                    <!--<svg><circle cx="10" cy="10" r="10" fill="#ccc"></circle></svg>-->
+                                    <!--<svg class="" [ngStyle]="{'display': f.type == 'done' ? 'block' : 'none'}" width="24px" height="24px" viewBox="0 0 24 24" fill="#0F9D58">-->
+                                        <!--<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>-->
+                                    <!--</svg>-->
+                                    <div style="margin-bottom: 0;" class="progress-bar" [style.width]="f.progress.data.percentage + '%'" [ngClass]="{ 'progress-bar-success': f.progress.data.percentage === 100 }"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--<div class="row" *ngIf="collapsedUpload">-->
+                            <!--<button type="button" style="border-top-left-radius: 0; border-top-right-radius: 0;" class="btn btn-block btn-success" (click)="startUpload()">-->
+                                <!--Start Upload-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modalFolder let-close="close">
+    <div class="modal-header">
+        <a class="close" (click)="close()">
+            <i class="fa fa-times"></i>
+        </a>
+        <h4 class="m-0">Create Folder</h4>
+    </div>
+    <form #folderForm="ngForm" class="text-left" (submit)="createFolder(folderForm.value)">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-12">
+                        <div class="row form-group">
+                            <label>Name</label>
+                            <input type="text" autofocus name="name" #folderName class="form-control" ngModel placeholder="Folder name" required>
+                            <div class="invalid" *ngIf="folderName.errors && (folderName.dirty || folderName.touched || folderName.submitted)">
+                                <p *ngIf="folderName.errors.required">
+                                    Calendar title is required
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
+            <button type="submit" class="btn btn-success" [disabled]="!folderForm.valid">Create</button>
+        </div>
+    </form>
+</ng-template>

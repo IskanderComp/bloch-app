@@ -1,0 +1,168 @@
+@import '~assets/scss/common/vars';
+
+@media (min-width: 768px) {
+
+    .navbar{
+        width: 90px;
+        height: 100%;
+
+        .navbar-header{
+            .navbar-brand{
+                height: 70px;
+            }
+        }
+        .navbar-collapse{
+            &.navbar-sign-out {
+                cursor: pointer;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                bottom: 20px;
+
+                i {
+                    font-size: 25px;
+                }
+            }
+            &.current-user-profile{
+                height: 90px !important;
+            }
+
+            &.navbar-menu{
+                height: calc(100% - 100px - 70px) !important;
+                padding-bottom: 10px;
+
+                .navbar-nav{
+                    height: 100%;
+
+                    li{
+                        height: calc(100% / 6 - 5px);
+
+                        span {
+                            &:nth-of-type(2){
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-height: 399px) {
+        .navbar{
+            position: relative;
+            width: 80px;
+            min-height: 100%;
+            height: auto;
+            float: left;
+
+            .navbar-collapse{
+                &.current-user-profile{
+                    height: 100px !important;
+
+                    li{
+                        a{
+                            h3{
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+                &.navbar-menu{
+                    .navbar-nav{
+                        li{
+                            h3 {
+                                font-size: 1.2rem;
+                            }
+                            span {
+                                &:nth-of-type(2){
+                                    display: inline-block;
+                                    padding: 3px 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-height: 400px) and (max-height: 500px) {
+
+        .navbar{
+            width: 70px;
+
+            .navbar-collapse{
+                &.current-user-profile{
+                    .nav{
+                        cursor: pointer;
+                        background: transparent;
+                        margin-bottom: 10px;
+                        text-align: center;
+
+                        li{
+                            a{
+                                h3{
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.navbar-menu{
+                    .navbar-nav{
+                        li{
+                            h3 {
+                                font-size: 1rem;
+                            }
+                            span {
+                                &:nth-of-type(2){
+                                    height: calc(100% - 1rem - 5px);
+                                    padding: 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-height: 501px) {
+
+        .navbar{
+            .navbar-collapse{
+                &.current-user-profile{
+                    height: 110px !important;
+
+                    li{
+                        a{
+                            h3{
+                                font-size: 1.4rem;
+                            }
+                        }
+                    }
+                }
+                &.navbar-menu{
+                    height: calc(100% - 110px - 10px - 70px) !important;
+
+                    .navbar-nav{
+                        li{
+                            h3 {
+                                font-size: 1.4rem;
+                            }
+                            span {
+                                &:nth-of-type(2){
+                                    display: flex;
+                                    padding: 3px 15px;
+                                    height: calc(100% - 1.4rem - 5px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

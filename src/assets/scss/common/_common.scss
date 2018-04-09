@@ -1,0 +1,507 @@
+@import '~assets/scss/common/vars';
+
+$bloch-svg-block-items: logo, plus, task, calendar,
+                        user, archive, phone,
+                        storage, message, message2, mail,
+                        three-buildings, add-task,
+                        complate, comments, progress,
+                        pencil, file, folder,
+                        photos, sharing, links, upload;
+$bloch-svg-inline-items: message2, phone, three-buildings;
+
+.selected:not(.day){
+    width: 7px;
+    top: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    display: none;
+}
+
+.border-b{
+    border-bottom: 1px solid #AAA;
+}
+
+.icon-circle{
+    border-width: 1.4px;
+    border-style: solid;
+    border-color: #AAA;
+    border-radius: 50%;
+    font-size: 10px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*****  SVG Icon  *****/
+.svg-inline{
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+
+    .svg{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color:transparent;
+
+        @each $item in $bloch-svg-inline-items {
+            &.svg-#{$item} {
+                @include bg_icon_url('bloch/#{$item}.svg');
+            }
+        }
+    }
+}
+
+.svg-block{
+    cursor: pointer;
+    position: relative;
+    float:left;
+    display: inline-block;
+    padding: 5px 5px 3px;
+    text-align: center;
+
+    .svg{
+        width: 100%;
+        height: calc(100% - 1rem - 15px);
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color:transparent;
+        margin-top: 5px;
+        margin-bottom: 10px;
+
+        >.badge{
+            position: absolute;
+            background-color: red;
+            top: 0;
+            right: 0;
+            margin-top: 5px;
+            margin-right: 5px;
+            padding: 3px;
+            font-size: .9rem;
+            line-height: .9rem;
+        }
+
+        @each $item in $bloch-svg-block-items {
+            &.svg-#{$item} {
+                @include bg_icon_url('bloch/#{$item}.svg');
+            }
+        }
+    }
+    h6{
+        color: #FFF;
+        font-weight: bolder;
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+/*****  Message box  *****/
+.arrow-box{
+    position: relative;
+    width: $msg-box-width;
+    background-color: $msg-box-bg;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    border: $msg-box-border;
+
+    &:before,
+    &:after{
+        content: ' ';
+        position: absolute;
+        top: 50px;
+        pointer-events: none;
+        height: 0;
+        width: 0;
+        border: solid transparent;
+
+    }
+    &:before{
+        border-width: 12px;
+        margin-top: -38px;
+    }
+    &:after{
+        border-width: 11px;
+        margin-top: -37px;
+    }
+
+    &.pull-left{
+        margin-left: 5%;
+
+        &:before,
+        &:after{
+            right: 100%;
+        }
+
+        &:before{
+            border-right-color: $msg-box-border-color;
+        }
+        &:after{
+            border-right-color: $msg-box-bg;
+        }
+    }
+    &.pull-right{
+        margin-right: 5%;
+
+        &:before,
+        &:after{
+            left: 100%;
+        }
+
+        &:before{
+            border-left-color: $msg-box-border-color;
+        }
+        &:after{
+            border-left-color: $msg-box-bg;
+        }
+    }
+}
+
+.w-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+
+.p-0{
+    padding: 0 !important;
+}
+.m-0{
+    margin: 0 !important;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+
+.p-5{
+    padding: 5px;
+}
+.p-t-5{
+    padding-top: 5px;
+}
+.p-b-5{
+    padding-bottom: 5px;
+}
+.p-l-5{
+    padding-left: 5px;
+}
+.p-r-5{
+    padding-right: 5px;
+}
+.p-t-b-5{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.p-l-r-5{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.p-t-b-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.p-tb-15{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.p-lr-20{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.p-l-20 {
+    padding-left: 20px;
+}
+.p-t-30{
+    padding-top: 30px;
+}
+
+//User Image Block
+.user-img{
+    display: block;
+    margin: auto;
+    @include border-radius(50%);
+    @include bg_avatar_url('avatar1.png');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.box-border {
+    border: 1px solid #aaaaaa;
+}
+
+@media (min-width: 768px) {
+
+    .divider {
+        border-right: $border-divider;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .divider {
+        border-bottom: $border-divider;
+    }
+}
+
+/**
+ *    Datetime Picker
+ */
+.ng2-datetime-picker-wrapper{
+
+    .ng2-datetime-picker{
+
+        >.month{
+            background-color: $brand-success;
+            color: #FFF;
+
+            .prev_next{
+                color: #FFF;
+                line-height: 24px;
+
+                &:hover{
+                    background-color: #ffffff;
+                    color: $brand-common;
+                }
+            }
+        }
+        >.days{
+
+            .day-of-week{
+
+                &.weekend{
+                    color: red;
+                }
+            }
+            .day{
+
+                &.selected{
+                    background-color: $brand-common;
+                }
+            }
+        }
+        >.time{
+            margin: 10px;
+            text-align: center;
+
+            .minutesLabel,
+            .hourLabel{
+
+            }
+            .hourInput,
+            .minutesInput{
+
+                width: calc(100% - 40px);
+                float: right;
+                height: 16px;
+            }
+        }
+    }
+}
+
+input[type=range] {
+    display: block;
+    width: 100%;
+    margin: 0;
+    -webkit-appearance: none;
+    outline: none;
+
+    &::-webkit-slider-runnable-track {
+        position: relative;
+        height: 8px;
+        border: 1px solid #b2b2b2;
+        border-radius: 5px;
+        background-color: #e2e2e2;
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-slider-thumb {
+        position: relative;
+        top: -7px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #999;
+        -webkit-appearance: none;
+        background-color: #fff;
+        box-shadow: inset 0 -1px 2px 0 rgba(0, 0, 0, 0.25);
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+}
+
+.search{
+    position: relative;
+
+    input[type="search"]{
+        text-align: center;
+        color: #333;
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid;
+        padding: 2px 9px;
+        padding-right: 25px;
+    }
+    span{
+        position: absolute;
+        margin-top: -22px;
+        color: #071017;
+        margin-right: 7px;
+        right: 15px;
+    }
+}
+
+.bc-search{
+    @extend .search;
+    background-color: $svg-icon-bg;
+    padding: 22.5px 15px;
+    margin-right: 8px;
+    float: left;
+}
+
+
+.task-card .task-card-body .feed-element .feed-element-content h5.bc-datetime input:not([type="range"]){
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #aaaaaa;
+
+    ng2-datetime-picker{
+        width: 171.656px;
+        position: absolute;
+        z-index: 1000;
+        left: 0;
+        transition: height 0.3s ease-in;
+        visibility: visible;
+        bottom: -266px;
+    }
+    .ng2-datetime-picker > .days {
+        width: 210px;
+        margin: 10px;
+        text-align: center;
+    }
+}
+
+
+.ng2-datetime-picker-wrapper {
+
+    ng2-datetime-picker{
+        width: 232px !important;
+    }
+    .ng2-datetime-picker {
+
+        >.time {
+
+            .hourInput,
+            .minutesInput{
+                border: none !important;
+
+            }
+        }
+    }
+}
+
+.empty-dir {
+    background-color: #f9f9f9;
+    display: inline-block;
+    border-radius: 50%;
+    width: 250px;
+    padding: 25px;
+    height: 250px;
+    text-align: center;
+    >.svg-block {
+        width: 100%;
+        height: calc(100% - 40px);
+    }
+}
+// Viewer arrows
+
+.view-arrow {
+    position: absolute;
+    cursor: pointer;
+    font-size: 36px;
+    color: #fff;
+    top: 50%;
+    line-height: 36px;
+    display: inline-block;
+    margin-top: -15px;
+
+    &.left {
+        left: 0;
+        padding-left: 15px;
+    }
+    &.right {
+        right: 0;
+        padding-right: 15px;
+    }
+}
+
+
+//File view modal style
+
+.preview-window {
+    .modal-dialog {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+
+        .modal-content {
+            height: 100%;
+            border: 0;
+            background-color: rgba(51, 51, 51, .5);
+
+            .modal-header {
+                border-bottom: none;
+                color: #ffffff;
+
+                .close {
+                    color: #ffffff;
+                    opacity: .7;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+            .modal-body {
+                height: calc(100% - 50px);
+                padding-left: 70px;
+                padding-right: 70px;
+            }
+        }
+    }
+}
+
+.ui-autocomplete {
+    display: block;
+
+    .ui-inputtext {
+        border: 0;
+        &.ui-state-focus,
+        &:focus {
+            box-shadow: none;
+        }
+
+    }
+}
+.ui-autocomplete-input-token{
+
+    input {
+        width: 100%;
+    }
+}
+
+.a-enter-vr {
+    bottom: 60px;
+}
